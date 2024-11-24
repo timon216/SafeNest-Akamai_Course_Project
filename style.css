@@ -927,6 +927,8 @@ fieldset.message input {
   border: none;
   font-weight: 500;
   transition: all 200ms;
+
+  cursor: pointer;
 }
 .reset {
   background-color: white;
@@ -986,12 +988,4 @@ fieldset.message input {
       align-self: flex-end;
     }
   }
-}
-
-/* media breakpoints */
-
-@media screen and (max-width: 815px) {
-}
-
-@media screen and (max-width: 528px) {
 }
