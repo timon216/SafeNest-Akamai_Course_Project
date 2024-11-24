@@ -583,11 +583,11 @@ header:has(.mobile-nav-toggle[aria-expanded="false"]) .mobile-nav {
   max-width: 4rem;
 }
 
-.square-card:nth-of-type(odd) {
+.home .square-card:nth-of-type(odd) {
   justify-self: end;
 }
 
-.square-card:nth-of-type(even) {
+.home .square-card:nth-of-type(even) {
   justify-self: start;
 }
 
@@ -787,6 +787,7 @@ section li {
     justify-content: center;
     gap: 2rem;
     padding-block: 2rem;
+    margin-bottom: 3rem;
 
     p {
       max-width: 50ch;
@@ -819,6 +820,38 @@ section li {
 
       padding-inline: 1rem;
       border-radius: 1rem;
+    }
+  }
+
+  .section-two {
+    background: linear-gradient(0deg, #f0f0f0, #ebc180, #ebc180, #f0f0f0);
+    padding-block: 3rem;
+
+    
+    .cards {
+      margin-inline: auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      
+      width: fit-content;
+
+      p:nth-of-type(1) {
+        margin-block: 0.4rem;
+      }
+
+      p:nth-of-type(2) {
+        font-weight: 300;
+        font-size: var(--fs-300);
+      }
+
+      .square-card {
+        aspect-ratio: 1;
+        max-width: 10rem;
+      }
+
+      @media screen and (max-width: 815px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 }
