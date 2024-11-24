@@ -591,6 +591,11 @@ header:has(.mobile-nav-toggle[aria-expanded="false"]) .mobile-nav {
   justify-self: start;
 }
 
+section li {
+  padding-block: 0.4rem;
+  list-style-position: inside;
+}
+
 .home .section-two {
   padding-block: 3rem;
   position: relative;
@@ -604,11 +609,6 @@ header:has(.mobile-nav-toggle[aria-expanded="false"]) .mobile-nav {
       inset: 0;
       background-color: hsl(var(--bg-grey), 0.1);
     }
-
-  li {
-    padding-block: 0.4rem;
-    list-style-position: inside;
-  }
 
   .two-columns {
       @media screen and (max-width: 528px) {
@@ -658,6 +658,49 @@ header:has(.mobile-nav-toggle[aria-expanded="false"]) .mobile-nav {
   }
 }
 
+/* about us */
+
+/* section 1 */
+
+.about .section-one {
+  position: relative;
+  padding-block: 3rem;
+  
+  > div:first-of-type {
+    width: 60%;
+    background-color: hsl(var(--bg-grey), 0.8);
+
+    @media screen and (max-width: 528px) {
+      width: 100%;
+    }
+
+    div:first-of-type {
+      margin-bottom: 1rem;
+
+      h3 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .img {
+    position: absolute;
+    top: 0;
+    right: -6rem;
+    z-index: -1;
+    width: 30rem;
+    aspect-ratio: 1;
+    background-image: url("images/about\ us\ -\ people.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    scale: 1.1;
+
+    @media screen and (max-width: 815px) {
+      scale: 1;
+    }
+  }
+}
 
 /* media breakpoints */
 
