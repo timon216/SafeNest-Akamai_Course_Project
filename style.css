@@ -200,10 +200,6 @@ body {
 /* header */
 
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -377,7 +373,7 @@ header:has(.mobile-nav-toggle[aria-expanded="false"]) .mobile-nav {
   height: fit-content;
   margin-top: auto;
   
-  background-color: white;
+  background: linear-gradient(180deg, #f0f0f0, #ffffff, #ffffff);
   
   .logo {
     margin-inline: auto;
@@ -443,7 +439,7 @@ header:has(.mobile-nav-toggle[aria-expanded="false"]) .mobile-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-block: 1.5rem 3rem;
+  margin-block: 1.5rem;
 
   div:first-child {
     border-radius: 0 1rem 1rem 0;
@@ -500,9 +496,9 @@ header:has(.mobile-nav-toggle[aria-expanded="false"]) .mobile-nav {
 }
 
 .home .section-one {
-  padding-block: 3rem;
+  padding-block: 5rem;
 
-  background-color: hsl(var(--color-primary));
+  background: linear-gradient(0deg, #f0f0f0, #ebc180, #ebc180, #f0f0f0);
 
   h3 {
     margin-bottom: 1rem;
