@@ -1,0 +1,182 @@
+/* --------- */
+/* css reset */
+/* --------- */
+
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark light;
+  hanging-punctuation: first allow-end last;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  line-height: 1.5;
+  scrollbar-gutter: stable;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+h1, h2, h2, h4, button, input, label {
+  line-height: 1.1;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a:not([class]) {
+  text-decoration-thickness: max(0.08em, 1px);
+  text-underline-offset: 0.15em;
+  text-decoration-skip: auto;
+  color: currentColor;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ----------------- */
+/* custom properties */
+/* ----------------- */
+
+/* fonts */
+:root {
+  --fs-200: clamp(0.56rem, calc(0.62rem + -0.08vw), 0.61rem);
+  --fs-300: clamp(0.73rem, calc(0.72rem + 0.04vw), 0.75rem);
+  --fs-400: clamp(0.88rem, calc(0.83rem + 0.22vw), 1.00rem);
+  --fs-500: clamp(1.05rem, calc(0.95rem + 0.49vw), 1.33rem);
+  --fs-600: clamp(1.26rem, calc(1.08rem + 0.90vw), 1.78rem);
+  --fs-700: clamp(1.51rem, calc(1.21rem + 1.49vw), 2.37rem);
+  --fs-800: clamp(1.81rem, calc(1.35rem + 2.34vw), 3.16rem);
+  --fs-900: clamp(2.18rem, calc(1.47rem + 3.53vw), 4.21rem);
+}
+
+/* colors */
+:root {
+  --bg-grey: 0, 0%, 94%;
+  --color-primary: 36, 73%, 71%;
+  --color-secondary: 32, 20%, 54%;
+  --color-accent: 206, 41%, 61%;
+  --color-text: 33, 25%, 41%;
+}
+
+/* --------------- */
+/* utility classes */
+/* --------------- */
+
+.content-grid {
+  --padding-inline: clamp(1rem, 12%, 6rem);
+  --content-max-width: 120ch;
+  --breakout-max-width: 140ch;
+
+  --breakout-size: calc(
+    (var(--breakout-max-width) - var(--content-max-width)) / 2
+  );
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr)
+    [breakout-start] minmax(0, var(--breakout-size))
+    [content-start] min(100% - (var(--padding-inline) * 2),
+      var(--content-max-width))
+    [content-end]
+    minmax(0, var(--breakout-size)) [breakout-end]
+    minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.content-grid > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.content-grid > .breakout {
+  grid-column: breakout;
+}
+
+.content-grid > .full-width {
+  grid-column: full-width;
+
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+:root {
+  --padding-sm: clamp(1rem, 3%, 1.5rem);
+  --padding-md: clamp(1.5rem, 6%, 3rem);
+  --padding-lg: clamp(3rem, 12%, 6rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
