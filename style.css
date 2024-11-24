@@ -434,3 +434,54 @@ header:has(.mobile-nav-toggle[aria-expanded="false"]) .mobile-nav {
 
   }
 }
+
+/* home page */
+
+/* hero */
+
+.hero {
+  display: flex;
+  align-items: center;
+  margin-block: 1.5rem 3rem;
+
+  div:first-child {
+    border-radius: 0 1rem 1rem 0;
+    background-color: hsl(var(--bg-grey), 0.8);
+  }
+
+  h1 {
+    display: inline-block;
+    margin-bottom: 1rem;
+    max-width: 18ch;
+    padding-block: 0.5rem;
+
+    font-size: var(--fs-700);
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 0.6rem;
+  }
+  
+  .hero-img-container {
+    position: relative;
+  }
+
+  @media screen and (max-width: 815px) {
+    .hero-img {
+      max-width: 15rem;
+
+      position: absolute;
+      z-index: -2;
+      top: -7rem;
+      right: -8rem;
+    }
+  }
+
+  @media screen and (max-width: 528px) {
+    .hero-img {
+      right: -5rem;
+    }
+  }
+}
+
