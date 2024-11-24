@@ -896,7 +896,6 @@ section li {
   }
 }
 
-
 fieldset.company-details, fieldset.message {
   grid-template-columns: 1fr;
 }
@@ -910,31 +909,75 @@ fieldset.message input {
   justify-content: end;
   gap: 1rem;
   margin-block: 1.5rem;
-
-  .button {
-    padding: 0.5rem 1.5rem;
-    text-transform: uppercase;
-    border-radius: 3rem;
-    border: none;
-    font-weight: 500;
-    transition: all 200ms;
-  }
-  .reset {
-    background-color: white;
-  }
-  .reset:hover {
-    background-color: hsl(var(--color-secondary), 0.5);
-  }
-  .submit {
-    background-color: hsl(var(--color-accent));
-    color: white;
-  }
-  .submit:hover {
-    scale: 1.1;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
 }
 
+.button {
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  border-radius: 3rem;
+  border: none;
+  font-weight: 500;
+  transition: all 200ms;
+}
+.reset {
+  background-color: white;
+}
+.reset:hover {
+  background-color: hsl(var(--color-secondary), 0.5);
+}
+.submit {
+  background-color: hsl(var(--color-accent));
+  color: white;
+}
+.submit:hover {
+  scale: 1.1;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* login page */
+
+.login {
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  h3 {
+    font-size: var(--fs-600);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    fieldset {
+      border: none;
+    }
+
+    fieldset:not(.employee) {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 6rem 1fr;
+    }
+
+    .employee {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    input {
+      height: 2rem;
+    }
+
+    .submit {
+      align-self: flex-end;
+    }
+  }
+}
 
 /* media breakpoints */
 

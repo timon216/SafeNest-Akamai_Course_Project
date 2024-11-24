@@ -33,8 +33,26 @@
     </nav>
   </header>
 
-  <main>
-    
+  <main class="full-width content-grid login">
+    <section>
+      <h3>Log in with your credentials</h3>
+      <form action="">
+        <fieldset>
+          <label for="username">Username: </label>
+          <input type="text" id="username" name="UserName" required>
+        </fieldset>
+        <fieldset>
+          <label for="username">Password: </label>
+          <input required="required" size="25" type="password" id="password" name="Password">
+        </fieldset>
+        <fieldset class="employee">
+          <label for="employee">Please check if you are an employee: </label>
+          <input type="checkbox" id="employee" name="employee" value="Employee">
+        </fieldset>
+        <input class="button submit" type="submit" value="Login">
+      </form>
+      <p>Don’t have an account? Click <a href="contact.html">here</a> to get started.</p>
+    </section>
   </main>
 
   <footer class="footer full-width">
