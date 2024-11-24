@@ -313,8 +313,17 @@ body {
   }
 }
 
+.no-touch {
+  touch-action: none;
+  position: fixed;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
 .mobile-nav {
-  position: relative;
+  position: absolute;
+  right: 3rem;
+  z-index: 999;
   
 
   list-style: none;
