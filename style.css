@@ -849,34 +849,36 @@ section li {
 .services .section-two {
   background: linear-gradient(0deg, #f0f0f0, #ebc180, #ebc180, #f0f0f0);
   padding-block: 3rem;
+}
 
+.services .section-two .cards {
+  margin-inline: auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   
-  .cards {
-    margin-inline: auto;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    
-    width: fit-content;
+  width: fit-content;
+}
 
-    p:nth-of-type(1) {
-      margin-block: 0.4rem;
-    }
+.services .section-two .cards p:nth-of-type(1) {
+  margin-block: 0.4rem;
+}
 
-    p:nth-of-type(2) {
-      font-weight: 300;
-      font-size: var(--fs-300);
-    }
+.services .section-two .cards p:nth-of-type(2) {
+  font-weight: 300;
+  font-size: var(--fs-300);
+}
 
-    .square-card {
-      aspect-ratio: 1;
-      max-width: 10rem;
-    }
+.services .section-two .cards .square-card {
+  aspect-ratio: 1;
+  max-width: 10rem;
+}
 
-    @media screen and (max-width: 815px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+@media screen and (max-width: 815px) {
+  .services .section-two .cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+
 
 /* contact */
 
